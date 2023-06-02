@@ -1,7 +1,9 @@
 <?php
-
-require_once 'models/User.php';
-require_once 'models/UserProvider.php';
+namespace Petproject\Todoist\controller;
+use Petproject\Todoist\models\UserProvider;
+//
+//require_once 'models/User.php';
+//require_once 'models/UserProvider.php';
 
 session_start();
 
@@ -32,4 +34,4 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     die();
 }
 
-include "view/signin.php";
+include "src/view/signin.php";

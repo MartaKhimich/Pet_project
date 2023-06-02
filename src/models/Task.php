@@ -1,17 +1,18 @@
 <?php
 
-include_once "models/Model.php";
+namespace Petproject\Todoist\models;
+
 
 class Task extends Model
 {
     private int $user_id;
     private ?string $description;
-    private bool $isDone = false; 
+    private bool $isDone = false;
 
     public function __construct(int $id = null, string $description = null)
     {
         parent::__construct($id);
-        $this->description = $description; 
+        $this->description = $description;
     }
 
     public function getUser_id(): int
@@ -29,9 +30,9 @@ class Task extends Model
         return $this->description;
     }
 
-    public function setDescription(string $description): void 
+    public function setDescription(string $description): void
     {
-        $this->description = $description; 
+        $this->description = $description;
     }
 
     public function isDone(): bool

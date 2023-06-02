@@ -1,5 +1,9 @@
 <?php
-require_once 'models/User.php';
+namespace Petproject\Todoist\controller;
+
+use Petproject\Todoist\models\User;
+//
+//require_once 'models/User.php';
 session_start();
 
 $pageHeader = 'Добро пожаловать в TODO:-)';
@@ -10,4 +14,4 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username']->getUsername();
 }
 
-include "view/index.php";
+include "src/view/index.php";

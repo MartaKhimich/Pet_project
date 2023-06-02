@@ -1,8 +1,12 @@
 <?php
+namespace Petproject\Todoist\controller;
+use Petproject\Todoist\exceptions\UserExistsException;
+use Petproject\Todoist\models\User;
+use Petproject\Todoist\models\UserProvider;
 
-require_once 'models/Model.php';
-require_once "models/User.php";
-require_once 'models/UserProvider.php';
+//require_once 'models/Model.php';
+//require_once "models/User.php";
+//require_once 'models/UserProvider.php';
 
 $pdo = require 'db.php';
 
@@ -30,4 +34,4 @@ if (isset($_POST['reg_name']) && isset($_POST['reg_username']) && isset($_POST['
     }
 }
 
-require_once 'view/registration.php';
+require_once 'src/view/registration.php';

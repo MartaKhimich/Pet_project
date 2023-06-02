@@ -1,6 +1,7 @@
 <?php
 //session_start();
 //unset($_SESSION['username']);
+require_once __DIR__ . '/vendor/autoload.php';
 
 $controller = $_GET['controller'] ?? 'index';
 

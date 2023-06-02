@@ -1,7 +1,9 @@
 <?php
 
-include "model/User.php";
-include "model/UserProvider.php";
+use Petproject\Todoist\models\User;
+use Petproject\Todoist\models\UserProvider;
+
+
 
 $pdo = require 'db.php';
 

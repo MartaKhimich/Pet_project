@@ -1,7 +1,9 @@
 <?php
 
-include_once "exceptions/UserExistsException.php";
-require_once 'User.php';
+namespace Petproject\Todoist\models;
+
+use PDO;
+use Petproject\Todoist\exceptions\UserExistsException;
 
 class UserProvider
 {
@@ -25,8 +27,8 @@ class UserProvider
         );
 
         $statement->execute([
-            'name'=> $user->getName(),
-            'username'=> $user->getUserName(),
+            'name' => $user->getName(),
+            'username' => $user->getUserName(),
             'password' => md5($plainPassword)
         ]);
 

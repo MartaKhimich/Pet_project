@@ -1,5 +1,6 @@
 <?php
 
+namespace Petproject\Todoist\models;
 class Model
 {
     protected ?int $id;

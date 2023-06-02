@@ -1,8 +1,12 @@
 <?php
+namespace Petproject\Todoist\controller;
+use Petproject\Todoist\exceptions\TaskAlreadyIsDoneException;
+use Petproject\Todoist\models\Task;
+use Petproject\Todoist\models\TaskProvider;
 
-include_once 'models/Task.php';
-include_once 'models/TaskProvider.php';
-include_once 'models/User.php';
+//include_once 'models/Task.php';
+//include_once 'models/TaskProvider.php';
+//include_once 'models/User.php';
 
 session_start();
 
@@ -68,4 +72,4 @@ if (isset($_GET['action']) && $_GET['action'] === 'apidone') {
 
 
 $tasks = $taskProvider->getUndoneList($user_id);
-include "view/tasks.php";
+include "src/view/tasks.php";

@@ -1,7 +1,9 @@
 <?php
 
-require_once 'Task.php';
-include_once "models/ITaskProvider.php";
+namespace Petproject\Todoist\models;
+
+use PDO;
+use Petproject\Todoist\exceptions\TaskAlreadyIsDoneException;
 
 class TaskProvider implements ITaskProvider
 {
@@ -26,14 +28,14 @@ class TaskProvider implements ITaskProvider
     }
 
     public function addTask(Task $task, int $user_id): bool
-    {         
+    {
         $statement = $this->pdo->prepare(
             'INSERT INTO tasks (user_id, description) VALUES(:user_id, :description)'
         );
 
         return $statement->execute([
             'user_id' => $user_id,
-            'description'=> $task->getDescription()
+            'description' => $task->getDescription()
         ]);
     }
 
@@ -70,19 +72,19 @@ class TaskProvider implements ITaskProvider
     //             $tasks[$key] = $task;
     //         }
     //     }
-    
+
     //     return $tasks;
     // }
-    
+
     // public function addTask(Task $task): void
     // {
-      //сохраняем задачи в сессию, 
-      //чтобы при перезагрузке страницы, данные не исчезали
-            
+    //сохраняем задачи в сессию,
+    //чтобы при перезагрузке страницы, данные не исчезали
+
     //     $_SESSION['tasks'][] = $task;
     //     $this->tasks[] = $task;
     // }
-    
+
     // public function deleteTask(int $key): void
     // {
     //     unset($_SESSION['tasks'][$key]);

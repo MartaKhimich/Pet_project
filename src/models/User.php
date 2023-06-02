@@ -1,6 +1,9 @@
 <?php
 
-include_once "models/Model.php";
+namespace Petproject\Todoist\models;
+
+use Petproject\Todoist\models\Model;
+
 
 class User extends Model
 {
@@ -31,8 +34,7 @@ class User extends Model
     }
 
     public function setName(string $name): self
-    {
-        $this->name = $name;
+    {$this->name = $name;
 
         return $this;
     }
