@@ -8,8 +8,12 @@
 
     "authors": [
         {
-            "name": "martakhimich, ZoyaKapustiak",
+            "name": "martakhimich",
             "email": "marta_himich@mail.ru, 102512424+ZoyaKapustiak@users.noreply.github.com"
+        },
+        {
+            "name": "ZoyaKapustiak",
+            "email": "nzi_s-pb@mail.ru"
         }
     ],
     "require": {
